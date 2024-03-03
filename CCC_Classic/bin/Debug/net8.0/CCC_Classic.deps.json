@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "CCC_Classic/1.0.0": {
+        "dependencies": {
+          "CCC_Classic.Utils": "1.0.0"
+        },
+        "runtime": {
+          "CCC_Classic.dll": {}
+        }
+      },
+      "CCC_Classic.Utils/1.0.0": {
+        "runtime": {
+          "CCC_Classic.Utils.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CCC_Classic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CCC_Classic.Utils/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
