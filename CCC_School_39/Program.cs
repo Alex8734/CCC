@@ -2,4 +2,4 @@
 using CCC_School_39;
 
 
-new Alex_Level4().Run(writeToConsole:true);
+new Alex_Level4().Run();

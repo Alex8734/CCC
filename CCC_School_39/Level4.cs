@@ -13,45 +13,53 @@ public class Alex_Level4:Level
             var amounts =  lines[j+1].Split(" ").Select(v => int.Parse(v)).ToList();
             foreach (var amount in amounts)
             {
-                output.Add(MinCoins(currency.ToArray(),amount).Item2?.Select(kv => $"{kv.Value}x{kv.Key}").Aggregate((a,b) => $"{a} {b}")?? "");
+                output.Add(MinCoins(currency.ToArray(),amount).Select(kv => $"{kv.Value}x{kv.Key}").Aggregate((a,b) => $"{a} {b}")?? "");
+                Console.WriteLine($"got {output.Count}");
             }
+
+            
         }
         return output.ToArray();
     }
-    public (int, Dictionary<int, int>?) MinCoins(int[] coins, int amount)
+    public Dictionary<int, int> MinCoins(int[] coins, int amount)
     {
-        int max = amount + 1;
-        int[] dp = new int[amount + 1];
-        Dictionary<int, int>[] coinCount = new Dictionary<int, int>[amount + 1];
-        for (int i = 0; i < coinCount.Length; i++)
-        {
-            coinCount[i] = new Dictionary<int, int>();
-        }
+        var queue = new Queue<(int, Dictionary<int, int>)>();
+        var visited = new HashSet<int>();
+        queue.Enqueue((0, new Dictionary<int, int>()));
 
-        Array.Fill(dp, max);
-        dp[0] = 0;
-
-        for (int i = 1; i <= amount; i++)
+        while (queue.Count > 0)
         {
-            for (int j = 0; j < coins.Length; j++)
+            var (currentAmount, coinCount) = queue.Dequeue();
+
+            if (currentAmount == amount)
             {
-                if (coins[j] <= i && dp[i - coins[j]] + 1 < dp[i])
+                return coinCount;
+            }
+
+            foreach (var coin in coins)
+            {
+                var newAmount = currentAmount + coin;
+
+                if (newAmount <= amount && !visited.Contains(newAmount))
                 {
-                    dp[i] = dp[i - coins[j]] + 1;
-                    coinCount[i] = new Dictionary<int, int>(coinCount[i - coins[j]]);
-                    if (coinCount[i].ContainsKey(coins[j]))
+                    var newCoinCount = new Dictionary<int, int>(coinCount);
+
+                    if (newCoinCount.ContainsKey(coin))
                     {
-                        coinCount[i][coins[j]]++;
+                        newCoinCount[coin]++;
                     }
                     else
                     {
-                        coinCount[i][coins[j]] = 1;
+                        newCoinCount[coin] = 1;
                     }
+
+                    queue.Enqueue((newAmount, newCoinCount));
+                    visited.Add(newAmount);
                 }
             }
         }
 
-        return dp[amount] > amount ? (-1, null) : (dp[amount], coinCount[amount]);
+        return null;
     }
    
 }
