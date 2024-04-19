@@ -7,12 +7,13 @@ public class Alex_Level4:Level
     public override string[] Start(string[] lines)
     {
         var output = new List<string>();
-        foreach (var line in lines.Skip(2))
+        for (var j = 3; j<lines.Length-1; j+=2)
         {
-            var currency = line.Split(" ").Select(v => int.Parse(v)).ToList();
-            for (var i = 1; i <= 100; i++)
+            var currency = lines[j].Split(" ").Select(v => int.Parse(v)).ToList();
+            var amounts =  lines[j+1].Split(" ").Select(v => int.Parse(v)).ToList();
+            foreach (var amount in amounts)
             {
-                output.Add(MinCoins(currency.ToArray(),i).Item2?.Select(kv => $"{kv.Value}x{kv.Key}").Aggregate((a,b) => $"{a} {b}")?? "");
+                output.Add(MinCoins(currency.ToArray(),amount).Item2?.Select(kv => $"{kv.Value}x{kv.Key}").Aggregate((a,b) => $"{a} {b}")?? "");
             }
         }
         return output.ToArray();
