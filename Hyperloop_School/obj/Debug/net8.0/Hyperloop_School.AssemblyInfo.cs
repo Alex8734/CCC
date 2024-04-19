@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hyperloop_School")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39a1b7cd97c5bcdadecd84428cac07d6693f851d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b60da92a972afee771c15767ce0b2476819d3a29")]
 [assembly: System.Reflection.AssemblyProductAttribute("Hyperloop_School")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hyperloop_School")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
