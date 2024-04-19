@@ -26,7 +26,7 @@ public class Level2:Level
                     {
                         if (num2 + num == v)
                         {
-                            res.Add($"{num + num2}");
+                            res.Add($"{num} {num2}");
                         }
                     }
                 }
