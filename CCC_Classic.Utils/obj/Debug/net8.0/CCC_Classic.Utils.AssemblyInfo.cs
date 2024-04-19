@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CCC_Classic.Utils")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d61417d4d37161dd5a174f8a8c05e4d3070fbe7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0a93c15a755493044cb57f23c9c101c1d94e925")]
 [assembly: System.Reflection.AssemblyProductAttribute("CCC_Classic.Utils")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CCC_Classic.Utils")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
