@@ -1,23 +1,38 @@
 ﻿namespace CCC_Classic.Utils;
+using System.IO;
 
 public class Utils
 {
-    public static void InvokeAllParts(int lvl, Func<string[],string[]> f, int inputs = 5)
+    public static Func<int,int,string> FileSelector { get; set; } = (l, i) => $"level{l}_{i}.in";
+    public static Func<int,string> ExampleSelector { get; set; } = (l) => $"level{l}_example.in";
+    public static Func<int,string> ExampleOutSelector { get; set; } = (l) => $"level{l}_example.out";
+    public static string Path { get; set; } = "../../../Data";
+    public static int StartIdx { get; set; } = 1;
+    
+    public static void InvokeAllParts(int lvl, Func<string[],string[]> f, int inputs = 4,  bool writeToConsole = false)
     {
-        for (int i = 0; i < inputs; i++)
+        
+        for (int i = StartIdx; i < inputs+StartIdx; i++)
         {
-            var data =File.ReadAllLines($"Data/Level{lvl}/lvl{lvl}_{i}.inp");
+            var data =File.ReadAllLines($"{Path}/Level{lvl}/{FileSelector.Invoke(lvl,i)}");
             var output = f.Invoke(data);
-            File.WriteAllLines($"Data/level{lvl}/level{lvl}_{i}.out", output);
+            if(writeToConsole)
+            {
+                Console.WriteLine($"Output for level {lvl} input {i}:");
+                foreach (var s in output)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+            File.WriteAllLines($"{Path}/Level{lvl}/level{lvl}_{i}.out", output);
         }
     }
-    
-    public static void InvokeExample(int lvl, Func<string[],string[]> f )
+    public static void InvokeExample(int lvl, Func<string[],string[]> f)
     {
-        var data =File.ReadAllLines($"Data/Level{lvl}/level{lvl}_example.in");
+        var data =File.ReadAllLines($"{Path}/Level{lvl}/{ExampleSelector.Invoke(lvl)}");
         var output = f.Invoke(data);
         
-        var expected = File.ReadAllLines($"Data/Level{lvl}/level{lvl}_example.out");
+        var expected = File.ReadAllLines($"{Path}/Level{lvl}/{ExampleOutSelector.Invoke(lvl)}");
         var isCorrect = true;
         if(output.Length != expected.Length)
         {
@@ -53,8 +68,8 @@ public class Utils
             Console.WriteLine($"Everything is correct!");
             Console.ResetColor();
         }
-        
-        File.WriteAllLines($"Data/level{lvl}/level{lvl}_example.out2", output);
-        Console.WriteLine($@"Saved output to {Environment.CurrentDirectory}\Data\Level{lvl}\level{lvl}_example.out2");
+        var outPath =System.IO.Path.GetFullPath($"{Path}/Level{lvl}/level{lvl}_example.out2");
+        File.WriteAllLines(outPath, output);
+        Console.WriteLine($@"Saved output to {outPath}");
     }
 }

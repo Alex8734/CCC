@@ -37,3 +37,4 @@ C:\Users\aresc\source\repos\CCC_Classic\CCC_Classic\bin\Debug\net8.0\Data\Level3
 C:\Users\aresc\source\repos\CCC_Classic\CCC_Classic\bin\Debug\net8.0\Data\Level3\level3_5.in
 C:\Users\aresc\source\repos\CCC_Classic\CCC_Classic\bin\Debug\net8.0\Data\Level3\level3_example.in
 C:\Users\aresc\source\repos\CCC_Classic\CCC_Classic\bin\Debug\net8.0\Data\Level3\level3_example.out
+C:\Users\aresc\source\repos\CCC_Classic\CCC_Classic\obj\Debug\net8.0\CCC_Classic.sourcelink.json

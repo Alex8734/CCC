@@ -9,3 +9,4 @@ C:\Users\aresc\source\repos\CCC_Classic\CCC_Classic.Utils\obj\Debug\net8.0\CCC_C
 C:\Users\aresc\source\repos\CCC_Classic\CCC_Classic.Utils\obj\Debug\net8.0\refint\CCC_Classic.Utils.dll
 C:\Users\aresc\source\repos\CCC_Classic\CCC_Classic.Utils\obj\Debug\net8.0\CCC_Classic.Utils.pdb
 C:\Users\aresc\source\repos\CCC_Classic\CCC_Classic.Utils\obj\Debug\net8.0\ref\CCC_Classic.Utils.dll
+C:\Users\aresc\source\repos\CCC_Classic\CCC_Classic.Utils\obj\Debug\net8.0\CCC_Classic.Utils.sourcelink.json
