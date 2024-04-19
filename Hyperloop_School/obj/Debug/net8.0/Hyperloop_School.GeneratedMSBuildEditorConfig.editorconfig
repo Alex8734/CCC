@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Hyperloop_School
-build_property.ProjectDir = C:\Users\hpass\RiderProjects\CCC\Hyperloop_School\
+build_property.ProjectDir = C:\Users\aresc\source\repos\CCC_Classic\Hyperloop_School\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

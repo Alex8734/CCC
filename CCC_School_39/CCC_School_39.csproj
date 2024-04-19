@@ -8,10 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Data\Level3\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\CCC_Classic.Utils\CCC_Classic.Utils.csproj" />
     </ItemGroup>
 

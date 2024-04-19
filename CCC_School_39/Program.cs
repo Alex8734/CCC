@@ -2,4 +2,4 @@
 using CCC_School_39;
 
 
-new Alex_Level2().Run(5);
+new Elija_Level2().RunExample();
