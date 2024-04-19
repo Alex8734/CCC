@@ -2,4 +2,4 @@
 using CCC_School_39;
 
 
-new Level1().Run();
+new Alex_Level2().RunExample();

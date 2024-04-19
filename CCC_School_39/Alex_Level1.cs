@@ -9,12 +9,13 @@ public class Alex_Level1:Level
         var output = new List<string>();
         foreach (var line in lines)
         {
-            var currency = line.Split(" ").Select(v => new Coin(int.Parse(v)));
-            for (int i = 0; i < currency.Count(); i++)
+            var currency = line.Split(" ").Select(v => new Coin(int.Parse(v))).ToList();
+            for (int i = 0; i < currency.Count()-1; i++)
             {
                 if (currency.ElementAt(i).Value + 1 != currency.ElementAt(i + 1).Value)
                 {
                     output.Add((currency.ElementAt(i).Value +1).ToString());
+                    
                 }
             }      
         }
