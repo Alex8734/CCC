@@ -43,7 +43,7 @@ The `CCC_Classic.Utils` library provides a set of utilities to help you implemen
    ```csharp
     new AlexLevel1().RunExample();
     ```
-   <img src=".github/Example.png" alt="Properties" >
+   <img src="pics/Example.png" alt="Properties" >
 
 4. **Execute Your Level Implementation & Create the Output Files**:
    - **`.Run()`**: You can run your Level by calling the `.Run()` method.
@@ -67,13 +67,13 @@ The `CCC_Classic.Utils` library provides a set of utilities to help you implemen
 1. **Save Data Files**:
     - Save the data files for each level in the `Data` folder of your project.
     - Every Level should have a Directory with the exact the Name `Level<LevelNumber`.
-      <img src=".github/Data.png" alt="Data" height="300" >
+      <img src="pics/Data.png" alt="Data" height="300" >
 
 2. **Set File Properties**:
     - Right-click on the file in the Solution Explorer.
     - Select `Properties`.
     - Set `Copy to Output Directory` to `Copy always`.
-      <img src=".github/Propaties.png" alt="Properties" height="300" >
+      <img src="pics/Propaties.png" alt="Properties" height="300" >
 3. **File Selector**:
     - If the File Naming Syntax is different to the Other CCC's you need to overwrite the `FileSelector`.
    - Default File Naming Syntax: `level{levelNumber}-{exampleNumber}.txt`
