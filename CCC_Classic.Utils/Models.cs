@@ -19,7 +19,7 @@ public abstract partial class Level : ILevel
     {
         
         Utils.InvokeAllParts(GetLevel(), Start,inputs,writeToConsole);
-        Console.WriteLine($"Done with {Name}...");
+        Extensions.WriteInColor($"Done with {Name}...",ConsoleColor.Green);
         Console.WriteLine($"Data saved to {Path.GetFullPath($"{Utils.Path}\\{Name}\\")}");
         Console.WriteLine(new string('_', 100));
     }
@@ -31,10 +31,10 @@ public abstract partial class Level : ILevel
     
     private int GetLevel()
     {
-        return int.Parse(MyRegex().Match(Name).Groups[1].Value);
+        return int.Parse(LevelRegex().Match(Name).Groups[1].Value);
 
     }
 
     [GeneratedRegex(@"^.*\D(\d+)")]
-    private static partial Regex MyRegex();
+    private static partial Regex LevelRegex();
 }

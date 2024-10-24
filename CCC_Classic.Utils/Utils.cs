@@ -9,11 +9,12 @@ public class Utils
     public static string Path { get; set; } = "../../../Data";
     public static int StartIdx { get; set; } = 1;
     
-    public static void InvokeAllParts(int lvl, Func<string[],string[]> f, int inputs = 4,  bool writeToConsole = false)
+    public static void InvokeAllParts(int lvl, Func<string[],string[]> f, int inputs = 5,  bool writeToConsole = false)
     {
-        
+        Extensions.WriteInColor($"Running level {lvl}...",ConsoleColor.Yellow);
         for (int i = StartIdx; i < inputs+StartIdx; i++)
         {
+            Extensions.WriteInColor($" - Running level {lvl} input {i}...",ConsoleColor.DarkYellow);
             var data =File.ReadAllLines($"{Path}/Level{lvl}/{FileSelector.Invoke(lvl,i)}");
             var output = f.Invoke(data);
             if(writeToConsole)
@@ -29,6 +30,7 @@ public class Utils
     }
     public static void InvokeExample(int lvl, Func<string[],string[]> f)
     {
+        Extensions.WriteInColor($"Running level {lvl} example...", ConsoleColor.Yellow);
         var data =File.ReadAllLines($"{Path}/Level{lvl}/{ExampleSelector.Invoke(lvl)}");
         var output = f.Invoke(data);
         
@@ -48,7 +50,7 @@ public class Utils
         }
         for (int i = 0; i < output.Length; i++)
         {
-            if (output[i] != expected[i])
+            if (!output[i].Trim().Equals(expected[i].Trim()) )
             {
                 Console.Write($"Expected: ");
                 Console.ForegroundColor = ConsoleColor.Green;
