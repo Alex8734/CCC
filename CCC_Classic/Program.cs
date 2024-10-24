@@ -11,5 +11,5 @@ ILevel[] levels = [
 
 foreach (var level in levels)
 {
-    level.Run();
+    level.Run(writeToConsole:true);
 }

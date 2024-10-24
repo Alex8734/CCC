@@ -7,6 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Content Include="..\.github\Data.png">
+        <Link>.github\Data.png</Link>
+      </Content>
+      <Content Include="..\.github\Propaties.png">
+        <Link>.github\Propaties.png</Link>
+      </Content>
       <Content Include="..\.gitignore">
         <Link>.gitignore</Link>
       </Content>
