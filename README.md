@@ -77,12 +77,12 @@ The `CCC_Classic.Utils` library provides a set of utilities to help you implemen
       <img src="pics/Propaties.png" alt="Properties" height="300" >
 3. **File Selector**:
     - If the File Naming Syntax is different to the Other CCC's you need to overwrite the `FileSelector`.
-   - Default File Naming Syntax: `level{levelNumber}-{exampleNumber}.txt`
+   - Default File Naming Syntax: `Level{levelNumber}_{LevelNumber}.in`
 
    ###### _Program.cs:_
    ```csharp 
-    Utils.FileSelector = (lvl,i)=>$"level{lvl}_{i}.in";
-    Utils.ExampleSelector = lvl => $"level{lvl}_example.in";
+    Utils.FileSelector = (lvl,i)=>$"level{lvl}-{i}.txt";
+    Utils.ExampleSelector = lvl => $"level{lvl}-expl.txt";
     ```
 > **_Tip⚠️:_**  
 > If your Input has different count of InputFiles.
