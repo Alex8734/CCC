@@ -70,18 +70,19 @@ The `CCC_Classic.Utils` library provides a set of utilities to help you implemen
       <img src="pics/Data.png" alt="Data" height="300" >
 
 2. **Set File Properties**:
+    - !!!!not needet anymore!!!! using directory out of source directory...
     - Right-click on the file in the Solution Explorer.
     - Select `Properties`.
     - Set `Copy to Output Directory` to `Copy always`.
       <img src="pics/Propaties.png" alt="Properties" height="300" >
 3. **File Selector**:
     - If the File Naming Syntax is different to the Other CCC's you need to overwrite the `FileSelector`.
-   - Default File Naming Syntax: `level{levelNumber}-{exampleNumber}.txt`
+   - Default File Naming Syntax: `Level{levelNumber}_{LevelNumber}.in`
 
    ###### _Program.cs:_
    ```csharp 
     Utils.FileSelector = (lvl,i)=>$"level{lvl}-{i}.txt";
-    Utils.ExampleSelector = lvl => $"level{lvl}-eg.txt";
+    Utils.ExampleSelector = lvl => $"level{lvl}-expl.txt";
     ```
 > **_Tip⚠️:_**  
 > If your Input has different count of InputFiles.
