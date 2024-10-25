@@ -9,18 +9,25 @@ public class AlexLevel2 : Level
         var output = new List<string>();
         foreach (var line in lines.Skip(1))
         {
-            var currentVel = 0;
-            var heigth = 0;
             var ints = line.Split(" ").Select(i => int.Parse(i));
-            for (int i = 0; i < ints.Count(); i++)
-            {
-                currentVel = ints.ElementAt(i) - 10 + currentVel;
-                heigth += currentVel;
-                if (heigth < 0) heigth = 0;
-            }
-            output.Add(heigth.ToString());
+            output.Add(CalcHeigth(ints.ToArray()).ToString());
         }
 
         return output.ToArray();
+    }
+
+    public static int CalcHeigth(int[] ints)
+    {
+        var currentVel = 0;
+        var heigth = 0;
+
+        for (int i = 0; i < ints.Count(); i++)
+        {
+            currentVel = ints.ElementAt(i) - 10 + currentVel;
+            heigth += currentVel;
+            if (heigth < 0) heigth = 0;
+        }
+
+        return heigth;
     }
 }

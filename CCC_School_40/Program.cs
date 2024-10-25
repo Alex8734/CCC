@@ -1,4 +1,5 @@
 ﻿
 using CCC_School_40;
+using CCC_School_40.Data;
 
-new AlexLevel1().Run(5);
+new AlexLevel3().RunExample();
