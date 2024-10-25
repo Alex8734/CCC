@@ -6,6 +6,6 @@ public class AlexLevel1:Level
 {
     public override string[] Start(string[] lines)
     {
-        throw new NotImplementedException();
+
     }
 }
